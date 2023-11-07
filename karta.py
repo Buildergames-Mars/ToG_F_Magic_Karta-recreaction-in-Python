@@ -1,5 +1,5 @@
 # Okay. First, make a card class, then add two things name, qoute start, qoute end.
-# 
+# Number is included in wiki, use it as well.
 import random
 
 class Karta:    
@@ -81,6 +81,7 @@ while roundsmax > rounds:
     if Answer == random_karta.name:
         print("Correct\n")
         print(random_karta.qoute2)
+        #Karta is known, remove from play.
         knownKarta.append(random_karta) 
     else:
         print("Incorrect\n")
