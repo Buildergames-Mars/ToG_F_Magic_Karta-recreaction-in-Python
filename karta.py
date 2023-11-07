@@ -82,11 +82,15 @@ while roundsmax > rounds:
         print("Correct\n")
         print(random_karta.qoute2)
         #Karta is known, remove from play.
-        knownKarta.append(random_karta) 
+        knownKarta.append(random_karta)
+    
     else:
-        print("Incorrect\n")
-    print("round: " + str(rounds)+"\n")
+        #Not correct, but at least tells you who it was.
+        print("Incorrect\n It's:"+(random_karta.name) )
+        knownKarta.append(random_karta)
+        
     rounds+=1
+    
     if rounds == roundsmax:
         print("GAME OVER\n")
         print(knownKarta)
