@@ -60,8 +60,8 @@ Jade = Karta('Jade', "My apologies. I'd forgotten the young master here...", "ha
 
 
 #This is where the game starts:
-#Second for n 
-#round n
+#Choose the number of rounds.
+#Set all cards as unknown, if a card is known i.e. answered, remove from play.
 roundsmax = int(input("How many rounds?\n"))
 print(str(roundsmax) + " will be played.\n")
 rounds = 0
@@ -85,7 +85,7 @@ while roundsmax > rounds:
         knownKarta.append(random_karta) 
     else:
         print("Incorrect\n")
-    print("round:"+str(rounds)+"\n")
+    print("round: " + str(rounds)+"\n")
     rounds+=1
     if rounds == roundsmax:
         print("GAME OVER\n")
