@@ -1,0 +1,31 @@
+#mport pygames and set up exit.
+import pygame
+from sys import exit
+pygame.init()
+# create screen and title
+#screen = pygame.display.set_mode((1024,768))
+screen = pygame.display.set_mode((1080,1240))
+pygame.display.set_caption('Magic_carta')
+#Hertz
+Hertz = pygame.time.Clock()
+#(width, height)
+#test_surface = pygame.Surface((538,720))
+#Set the test_surface to red. +x +y reduces the y axis point.
+#test_surface.fill('Red')
+table_surface=pygame.image.load('assets\Cartabackground.png')
+RaineCarta=pygame.image.load('assets\graphics\Card_pics\RAine_Protype_micro_114x152.png')
+
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+         pygame.quit()
+         exit()
+    screen.blit(table_surface,(0,0))
+    screen.blit(RaineCarta,(100,200))
+    
+         
+    pygame.display.update()
+    #Set it at 30fps
+    Hertz.tick(30)
+
+    
