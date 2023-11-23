@@ -4,7 +4,7 @@ from sys import exit
 pygame.init()
 # create screen and title
 #screen = pygame.display.set_mode((1024,768))
-screen = pygame.display.set_mode((1080,1240))
+screen = pygame.display.set_mode((1920,1080))
 pygame.display.set_caption('Magic_carta')
 #Hertz
 Hertz = pygame.time.Clock()
@@ -12,20 +12,33 @@ Hertz = pygame.time.Clock()
 #test_surface = pygame.Surface((538,720))
 #Set the test_surface to red. +x +y reduces the y axis point.
 #test_surface.fill('Red')
-table_surface=pygame.image.load('assets\Cartabackground.png')
-RaineCarta=pygame.image.load('assets\graphics\Card_pics\RAine_Protype_micro_114x152.png')
+table_surface=pygame.image.load('assets\Cartabackground.png').convert_alpha()
+#card image files
+Rainepic=pygame.image.load('assets\graphics\Card_pics\RAine_Protype_micro_114x152.png').convert_alpha()
+p1cursor=pygame.image.load('assets\graphics\d_usable.png').convert_alpha()
+#font
+#font
+test_font=pygame.font.Font(None, 50)
+Round_text=test_font.render('Round N',True,'purple')
+kartax=int(0)
+kartay=int(0)
+
 
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
          pygame.quit()
          exit()
+  
+   #mousetracking: 
+    kartax,kartay=pygame.mouse.get_pos()
+
     screen.blit(table_surface,(0,0))
-    screen.blit(RaineCarta,(100,200))
+    screen.blit(Rainepic,(500,500))
+    screen.blit(Round_text,(950,500))
+    screen.blit(p1cursor,(kartax,kartay))
     
          
     pygame.display.update()
     #Set it at 30fps
     Hertz.tick(30)
-
-    
